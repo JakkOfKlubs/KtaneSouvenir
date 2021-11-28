@@ -322,6 +322,15 @@ public partial class SouvenirModule
         addQuestions(module, qs);
     }
 
+    private IEnumerable<object> ProcessSiloAuthorization(KMBombModule module)
+    {
+        var comp = GetComponent(module, "WarGamesModuleScript");
+
+        while (!fldSolved.Get())
+            yield return new WaitForSeconds(0.1f);
+        _modulesSolved.IncSafe(_SiloAuthorization);
+    }
+
     private IEnumerable<object> ProcessSimonSamples(KMBombModule module)
     {
         var comp = GetComponent(module, "SimonSamples");
