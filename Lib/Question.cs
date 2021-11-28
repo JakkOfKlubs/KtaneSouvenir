@@ -153,7 +153,7 @@ namespace Souvenir
           ExampleExtraFormatArguments = new[] { QandA.Ordinal, QandA.Ordinal }, ExampleExtraFormatArgumentGroupSize = 2)]
         BamboozlingButtonDisplayColor,
 
-        [SouvenirQuestion("How many times did you have to press the large button in {0}?", "Bamboozling Directional Button", AnswerLayout.TwoColumns4Answers, "3", "4", "5", "6")]
+        [SouvenirQuestion("How many times did you have to press the large button in {0}?", "Bamboozling Directional Button", AnswerLayout.TwoColumns4Answers, "2", "3", "4", "5", "6", "7", "8")]
         BamboozlingDirectionalButtonPresses,
 
         [SouvenirQuestion("Which menu item was present in {0}?", "Bakery", AnswerLayout.OneColumn4Answers, null,

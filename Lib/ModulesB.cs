@@ -163,18 +163,18 @@ public partial class SouvenirModule
 
     private IEnumerable<object> ProcessBamboozlingDirectionalButton(KMBombModule module)
     {
-        var comp = GetComponent(module, "BamDirScript");
+        var comp = GetComponent(module, "BamDirButtonScript");
         var fldSolved = GetField<bool>(comp, "_isSolved");
         while (!fldSolved.Get())
             yield return new WaitForSeconds(0.1f);
         _modulesSolved.IncSafe(_BamboozlingDirectionalButton);
-        var qs = new List<QandA>();
 
         // Required press count
         var rp = GetField<int>(comp, "_requiredPresses").Get();
         var requiredPresses = rp.ToString();
-        var wrongAnswers = Enumerable.Range(3, 7).Select(wr => wr.ToString()).ToArray();
-        qs.Add(makeQuestion(Question.BamboozlingDirectionalButtonPresses, _BamboozlingDirectionalButton, correctAnswers: new[] { requiredPresses }, preferredWrongAnswers: wrongAnswers));
+        var wrongAnswers = Enumerable.Range(2, 7).Select(wr => wr.ToString()).ToArray();
+
+        addQuestions(module, makeQuestion(Question.BamboozlingDirectionalButtonPresses, _BamboozlingDirectionalButton, correctAnswers: new[] { requiredPresses }, preferredWrongAnswers: wrongAnswers));
     }
 
     private IEnumerable<object> ProcessBakery(KMBombModule module)
