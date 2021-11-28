@@ -175,8 +175,6 @@ public partial class SouvenirModule
         var requiredPresses = rp.ToString();
         var wrongAnswers = Enumerable.Range(3, 7).Select(wr => wr.ToString()).ToArray();
         qs.Add(makeQuestion(Question.BamboozlingDirectionalButtonPresses, _BamboozlingDirectionalButton, correctAnswers: new[] { requiredPresses }, preferredWrongAnswers: wrongAnswers));
-
-        addQuestions(module, qs);
     }
 
     private IEnumerable<object> ProcessBakery(KMBombModule module)

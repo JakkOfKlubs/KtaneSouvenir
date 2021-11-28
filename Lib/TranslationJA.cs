@@ -553,6 +553,14 @@ namespace Souvenir
                 },
             },
 
+            // Bamboozling Directional Button
+            // How many times did you have to press the large button in {0}?
+            // How many times did you have to press the large button in Bamboozling Directional Button?
+            [Question.BamboozlingDirectionalButtonPresses] = new TranslationInfo
+            {
+                QuestionText = "How many times did you have to press the large button in {0}?",
+            },
+
             // Bakery
             // Which menu item was present in {0}?
             // Which menu item was present in Bakery?
@@ -1670,6 +1678,14 @@ namespace Souvenir
             [Question.EncryptionBingoEncoding] = new TranslationInfo
             {
                 QuestionText = "What was the first encoding used in {0}?",
+            },
+
+            // Enigma Cycle
+            // What was the {1} in {0}?
+            // What was the message in Enigma Cycle?
+            [Question.EnigmaCycleWords] = new TranslationInfo
+            {
+                QuestionText = "What was the {1} in {0}?",
             },
 
             // Entry Number Four
