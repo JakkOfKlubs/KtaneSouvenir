@@ -116,7 +116,7 @@ public partial class SouvenirModule
             }
         }
 
-        solved:
+    solved:
         _modulesSolved.IncSafe(_SeaShells);
 
         var qs = new List<QandA>();
@@ -325,10 +325,25 @@ public partial class SouvenirModule
     private IEnumerable<object> ProcessSiloAuthorization(KMBombModule module)
     {
         var comp = GetComponent(module, "WarGamesModuleScript");
-
-        while (!fldSolved.Get())
+        var fldStage = GetField<object>(comp, "mStatus");
+        while (fldStage.Get().ToString() != "Solved")
             yield return new WaitForSeconds(0.1f);
         _modulesSolved.IncSafe(_SiloAuthorization);
+        var qs = new List<QandA>();
+
+        var messageColor = GetField<object>(comp, "correctColor").Get();
+        var colorNames = new[] { "Red-Alpha", "Yellow-Alpha", "Green-Alpha" };
+        var correctColor = messageColor.ToString() == "Red" ? colorNames[0] : messageColor.ToString() == "Yellow" ? colorNames[1] : colorNames[2];
+        qs.Add(makeQuestion(Question.SiloAuthorizationMessageType, _SiloAuthorization, correctAnswers: new[] { correctColor }, preferredWrongAnswers: colorNames));
+
+        var outMessages = GetArrayField<string>(comp, "outMessages").Get();
+        var messages = new[] { outMessages[0], outMessages[2] };
+        for (int message = 0; message < 1; message++)
+            qs.Add(makeQuestion(Question.SiloAuthorizationEncryptedMessage, _SiloAuthorization, formatArgs: new[] { ordinal(message + 1) }, correctAnswers: new[] { messages[message] }));
+
+        qs.Add(makeQuestion(Question.SiloAuthorizationAuthCode, _SiloAuthorization, correctAnswers: new[] { GetField<int>(comp, "outAuthCode").Get().ToString("0000") }));
+
+        addQuestions(module, qs);
     }
 
     private IEnumerable<object> ProcessSimonSamples(KMBombModule module)

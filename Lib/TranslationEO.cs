@@ -574,14 +574,6 @@ namespace Souvenir
                 },
             },
 
-            // Bamboozling Directional Button
-            // How many times did you have to press the large button in {0}?
-            // How many times did you have to press the large button in Bamboozling Directional Button?
-            [Question.BamboozlingDirectionalButtonPresses] = new TranslationInfo
-            {
-                QuestionText = "How many times did you have to press the large button in {0}?",
-            },
-
             // Bakery
             // Which menu item was present in {0}?
             // Which menu item was present in Bakery?
@@ -6005,6 +5997,26 @@ namespace Souvenir
             [Question.SillySlots] = new TranslationInfo
             {
                 QuestionText = "What was the {1} slot in the {2} stage in {0}?",
+            },
+
+            // Silo Authorization
+            // What was the message type in {0}?
+            // What was the message type in Silo Authorization?
+            [Question.SiloAuthorizationMessageType] = new TranslationInfo
+            {
+                QuestionText = "What was the message type in {0}?",
+            },
+            // What was the {1} part of the encrypted message in {0}?
+            // What was the first part of the encrypted message in Silo Authorization?
+            [Question.SiloAuthorizationEncryptedMessage] = new TranslationInfo
+            {
+                QuestionText = "What was the {1} part of the encrypted message in {0}?",
+            },
+            // What was the received authentication code in {0}?
+            // What was the received authentication code in Silo Authorization?
+            [Question.SiloAuthorizationAuthCode] = new TranslationInfo
+            {
+                QuestionText = "What was the received authentication code in {0}?",
             },
 
             // Simon Samples

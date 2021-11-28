@@ -33,7 +33,6 @@ public partial class SouvenirModule
     const string _ASquare = "ASquareModule";
     const string _BamboozledAgain = "bamboozledAgain";
     const string _BamboozlingButton = "bamboozlingButton";
-    const string _BamboozlingDirectionalButton = "bamboozlingDirectionalButton";
     const string _Bakery = "bakery";
     const string _BarcodeCipher = "BarcodeCipherModule";
     const string _Bartending = "BartendingModule";
@@ -444,7 +443,6 @@ public partial class SouvenirModule
             { _ASquare, ProcessASquare },
             { _BamboozledAgain, ProcessBamboozledAgain },
             { _BamboozlingButton, ProcessBamboozlingButton },
-            { _BamboozlingDirectionalButton, ProcessBamboozlingDirectionalButton },
             { _Bakery, ProcessBakery },
             { _BarcodeCipher, ProcessBarcodeCipher },
             { _Bartending, ProcessBartending },
